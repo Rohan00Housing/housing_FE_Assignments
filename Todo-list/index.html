@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo-List</title>
+</head>
+<body>
+  <div class="list-container">
+    <div class="input-box">
+      <input type="text" id="new-todo" placeholder="Enter task">
+      <button id="add-btn" onclick="addTodo()">Add Todo</button>
+    </div>
+    <ol id="todos">
+
+    </ol>
+
+  </div>
+
+  <script src="todo.js"></script>
+  <style>
+    .list-container{
+      border: 3px solid red;
+      width: 30%;
+      position: relative;
+      left: 20%;
+      top: 20%;
+      display: grid;
+      justify-content: center;
+      padding: 10px;
+    }
+  </style>
+</body>
+</html>

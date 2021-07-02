@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="calculator_styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="calculator_helper.js"></script>
+</head>
+<body>
+  <div class="calci">
+    <input type="text" id="display">
+    <div class="keys">
+      <button id="+">+</button>
+      <button id="-">-</button>
+      <button id="x">x</button>
+      <button id="/">/</button>
+      <button id="%">%</button>
+      <button id="sq">sq</button>
+      <button id="sqrt">sqrt</button>
+      <button id="^">^</button>
+      <button id="log">log</button>
+    </div>
+    <div class="bottom-bar">
+      <button id="calculate-btn" onclick="calculateResult()">CALCULATE</button>
+      <button id="calculate-btn" onclick="clearScreen()">CLR</button>
+  </div>
+  </div>
+</body>
+<script>
+
+  function applyOperator(op){
+    // op = keys[id_num];
+    // let op = e.target.id;
+    let curScreen = document.getElementById('display').value;
+    curScreen += op;
+    document.getElementById('display').value = curScreen;
+  }
+
+  (function addingEventListeners(){
+    const keys = ["+","-","x","/","%","sq","sqrt","^","log"];
+    const disp = ["+","-","x","/","%","sq()","sqrt()","^","log()"];
+
+    for(let i=0;i<9;i++){
+      id_num = i;
+      let key = document.getElementById(keys[i]);
+      key.addEventListener("click",function(e){
+        if(e.target && e.target.id === keys[i]){
+          applyOperator(disp[i]);
+        }
+      });
+    }
+  })();
+
+</script>
+</html>
