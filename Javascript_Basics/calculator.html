@@ -28,31 +28,33 @@
       <button id="calculate-btn" onclick="clearScreen()">CLR</button>
   </div>
   </div>
-</body>
-<script>
 
-  function applyOperator(op){
-    // op = keys[id_num];
-    // let op = e.target.id;
-    let curScreen = document.getElementById('display').value;
-    curScreen += op;
-    document.getElementById('display').value = curScreen;
-  }
+  <script>
 
-  (function addingEventListeners(){
-    const keys = ["+","-","x","/","%","sq","sqrt","^","log"];
-    const disp = ["+","-","x","/","%","sq()","sqrt()","^","log()"];
-
-    for(let i=0;i<9;i++){
-      id_num = i;
-      let key = document.getElementById(keys[i]);
-      key.addEventListener("click",function(e){
-        if(e.target && e.target.id === keys[i]){
-          applyOperator(disp[i]);
-        }
-      });
+    function applyOperator(op){
+      // op = keys[id_num];
+      // let op = e.target.id;
+      let curScreen = document.getElementById('display').value;
+      curScreen += op;
+      document.getElementById('display').value = curScreen;
     }
-  })();
+  
+    (function addingEventListeners(){
+      const keys = ["+","-","x","/","%","sq","sqrt","^","log"];
+      const disp = ["+","-","x","/","%","sq()","sqrt()","^","log()"];
+  
+      for(let i=0;i<9;i++){
+        id_num = i;
+        let key = document.getElementById(keys[i]);
+        key.addEventListener("click",function(e){
+          if(e.target && e.target.id === keys[i]){
+            applyOperator(disp[i]);
+          }
+        });
+      }
+    })();
+  
+  </script>
+</body>
 
-</script>
 </html>
